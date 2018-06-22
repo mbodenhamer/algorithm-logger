@@ -21,12 +21,11 @@ setup(
     packages = find_packages(),
     install_requires = requirements('requirements.in'),
     license = 'MIT',
-    keywords = [],
+    keywords = ['algorithm', 'logging', 'logger', 'algorithm logger'],
     classifiers = [
         'Development Status :: 2 - Pre-Alpha',
         'Environment :: Console',
         'Intended Audience :: Developers',
-        'Intended Audience :: System Administrators',
         'License :: OSI Approved :: MIT License',
         'Operating System :: POSIX :: Linux',
         'Programming Language :: Python',

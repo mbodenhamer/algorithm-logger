@@ -50,7 +50,7 @@ build: check
 # Documentation
 
 docs:
-	@$(PYDEV) sphinx-apidoc -f -o docs/ $(PACKAGE)/
+	@$(PYDEV) sphinx-apidoc -f -o docs/ algorithm_logger/
 	@$(PYDEV) make -C docs html
 
 view:
@@ -71,7 +71,7 @@ pip-compile:
 
 PY36 = source .tox/py36/bin/activate
 QUICK_TEST = nosetests -s -v --pdb --pdb-failures
-UNIT_TEST = $(QUICK_TEST) -w $(PACKAGE)
+UNIT_TEST = $(QUICK_TEST) -w algorithm_logger/
 
 test:
 	@$(PYDEV) coverage erase

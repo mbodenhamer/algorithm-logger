@@ -1,4 +1,4 @@
-from algorithm-logger import Base
+from algorithm_logger import Base
 
 #-------------------------------------------------------------------------------
 # Base
