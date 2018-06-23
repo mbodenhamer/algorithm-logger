@@ -1,4 +1,4 @@
-from syn.base import Attr, Base
+from syn.base import Attr, Base, init_hook
 from syn.five import STR
 
 from .base import ValidationError
@@ -9,6 +9,7 @@ from .base import ValidationError
 
 class SpecBase(Base):
     _attrs = dict(type = Attr(type, doc='The type of this argument'),
+                  name = Attr(STR, doc='The name of this argument'),
                   required = Attr(bool, False, doc='If true, will throw an error if argument is not present'))
     _opts = dict(init_validate = True)
 
@@ -23,7 +24,7 @@ class SpecBase(Base):
 class Arg(SpecBase):
     '''Descriptor of a positional argument.'''
     _attrs = dict(index = Attr(int, doc='The index of this argument in *args'))
-    _opts = dict(args = ('index', 'type'))
+    _opts = dict(args = ('name', 'index', 'type'))
 
 
     def find_value(self, args, kwargs):
@@ -43,6 +44,11 @@ class Kwarg(SpecBase):
     '''Descriptor of a keyword-only argument.'''
     _attrs = dict(key = Attr(STR, doc='The key of this argument in **kwargs'))
     _opts = dict(args = ('key', 'type'))
+
+    @init_hook
+    def _init(self):
+        if not hasattr(self, 'name'):
+            self.name = self.key
 
     def find_value(self, args, kwargs):
         if self.key not in kwargs:

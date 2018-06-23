@@ -10,17 +10,18 @@ class Event(object):
 
 
 class FunctionCall(Event):
+    def __init__(self, spec):
+        self.spec = spec
+        self.parameters = {}
+
     def __call__(self, args, kwargs):
-        # copy self, log args and kwargs according to spec, then return copy
         ret = self.copy()
+        for arg in self.spec:
+            ret.parameters[arg.name] = arg.find_value(args, kwargs)
         return ret
 
     def copy(self):
-        return type(self)()
-
-    @classmethod
-    def from_spec(cls, spec):
-        return cls()
+        return type(self)(self.spec)
 
 
 #-------------------------------------------------------------------------------

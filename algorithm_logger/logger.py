@@ -32,7 +32,7 @@ class Logger(Base):
             event_type_name = name
             if name is None:
                 event_type_name = f.__name__
-            event_type = FunctionCall.from_spec(spec)
+            event_type = FunctionCall(spec)
 
             @wraps(f)
             def func(*args, **kwargs):

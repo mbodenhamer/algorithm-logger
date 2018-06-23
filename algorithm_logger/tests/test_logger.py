@@ -6,7 +6,7 @@ from algorithm_logger import Arg, Logger
 def test_logger():
     logger = Logger()
 
-    @logger.log(dict(a = Arg(0, int)))
+    @logger.log([Arg('a', 0, int)])
     def foo(a):
         return a + 1
 
@@ -15,6 +15,7 @@ def test_logger():
     assert len(logger.events['foo']) == 1
     event = logger.events['foo'][0]
     assert event.return_value == 2
+    assert event.parameters == dict(a=1)
 
     foo(2)
     assert logger.events['foo'][-1].return_value == 3
@@ -29,7 +30,7 @@ def test_logger():
 
     logger.decoration_enabled = False
     
-    @logger.log(dict(a = Arg(0, int)))
+    @logger.log([Arg('a', 0, int)])
     def bar(a):
         return a * 2
     
