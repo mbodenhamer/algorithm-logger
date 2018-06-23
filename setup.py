@@ -15,7 +15,7 @@ setup(
     version = version('version.txt'),
     author = 'Matt Bodenhamer',
     author_email = 'mbodenhamer@mbodenhamer.com',
-    description = 'Python library for logging and debugging algorithms',
+    description = 'A Python library for logging and debugging algorithm behavior',
     long_description = read('README.rst'),
     url = 'https://github.com/mbodenhamer/algorithm-logger',
     packages = find_packages(),
