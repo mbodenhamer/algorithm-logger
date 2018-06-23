@@ -19,6 +19,30 @@ algorithm\_logger.base module
     :undoc-members:
     :show-inheritance:
 
+algorithm\_logger.event module
+------------------------------
+
+.. automodule:: algorithm_logger.event
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+algorithm\_logger.logger module
+-------------------------------
+
+.. automodule:: algorithm_logger.logger
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+algorithm\_logger.spec module
+-----------------------------
+
+.. automodule:: algorithm_logger.spec
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 Module contents
 ---------------
