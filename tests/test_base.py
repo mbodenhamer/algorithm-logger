@@ -1,10 +1,10 @@
-from algorithm_logger import Base
+from algorithm_logger import ValidationError
 
 #-------------------------------------------------------------------------------
 # Base
 
 def test_base():
-    Base
+    ValidationError
 
 #-------------------------------------------------------------------------------
 
