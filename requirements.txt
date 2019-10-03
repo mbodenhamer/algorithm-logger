@@ -6,6 +6,6 @@
 #
 jinja2==2.10              # via syn
 markupsafe==1.0           # via jinja2
-pyyaml==3.12              # via syn
+pyyaml==5.1               # via syn
 six==1.11.0               # via syn
 syn==0.0.14
